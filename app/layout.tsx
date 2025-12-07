@@ -74,6 +74,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js" async></script>
+      </head>
       <body className={`${inter.variable} bg-white text-slate-900 antialiased overflow-x-hidden selection:bg-orange-600 selection:text-white`}>
         {children}
       </body>

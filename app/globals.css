@@ -156,4 +156,19 @@ body {
   transition-delay: 0.4s;
 }
 
+/* Dotted line animation */
+@keyframes dash {
+  to {
+    stroke-dashoffset: -100;
+  }
+}
+
+.dotted-line {
+  stroke-dasharray: 10 10;
+  animation: dash 20s linear infinite;
+  stroke: #ea580c;
+  stroke-width: 2;
+  opacity: 0.3;
+}
+
 

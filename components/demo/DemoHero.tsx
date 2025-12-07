@@ -33,13 +33,13 @@ export default function DemoHero() {
 
       <div className="text-center max-w-7xl mx-auto px-6 relative z-10">
         <ScrollAnimate animationType="fade-up" delay={0}>
-          <h1 className="bg-clip-text text-transparent bg-gradient-to-b from-slate-900 to-slate-600 text-4xl sm:text-6xl lg:text-7xl font-semibold tracking-tight leading-[1.1] max-w-4xl mx-auto mb-6">
+          <h1 className="bg-clip-text text-transparent bg-gradient-to-b from-slate-900 to-slate-600 text-5xl sm:text-6xl lg:text-8xl font-bold tracking-tight leading-[1.05] max-w-4xl mx-auto mb-8">
             See MenuOS in Action
           </h1>
         </ScrollAnimate>
         
         <ScrollAnimate animationType="fade-up" delay={100}>
-          <p className="leading-relaxed text-lg sm:text-xl text-slate-500 max-w-2xl mx-auto mb-10">
+          <p className="leading-relaxed text-xl sm:text-2xl text-slate-600 max-w-3xl mx-auto mb-12 font-medium">
             Watch how restaurants streamline operations, reduce errors, and boost efficiency with our all-in-one platform.
           </p>
         </ScrollAnimate>
@@ -63,17 +63,17 @@ export default function DemoHero() {
           <Link
             href="#schedule-demo"
             onClick={handleScheduleClick}
-            className="inline-flex items-center justify-center gap-2 bg-orange-600 text-white text-base font-medium px-8 py-3.5 rounded-full hover:bg-orange-700 transition-all shadow-xl shadow-orange-600/20 hover:shadow-orange-600/30 hover:-translate-y-0.5 disabled:opacity-70 disabled:cursor-not-allowed"
+            className="inline-flex items-center justify-center gap-2 bg-orange-600 text-white text-lg font-semibold px-10 py-4 rounded-full hover:bg-orange-700 transition-all shadow-xl shadow-orange-600/20 hover:shadow-orange-600/30 hover:-translate-y-0.5 disabled:opacity-70 disabled:cursor-not-allowed"
           >
             {isLoading ? (
               <>
-                <Loader2 className="loading-spinner" size={18} />
+                <Loader2 className="loading-spinner" size={20} />
                 Loading...
               </>
             ) : (
               <>
                 Schedule Your Demo
-                <ArrowRight className="text-base" size={18} />
+                <ArrowRight className="text-lg" size={20} />
               </>
             )}
           </Link>

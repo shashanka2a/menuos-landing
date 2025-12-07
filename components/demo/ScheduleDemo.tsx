@@ -36,11 +36,11 @@ export default function ScheduleDemo() {
     <section id="schedule-demo" className="py-24 bg-slate-50">
       <div className="max-w-7xl mx-auto px-6">
         <ScrollAnimate animationType="fade-up" delay={0}>
-          <div className="max-w-3xl mx-auto text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-semibold text-slate-900 tracking-tight mb-6">
+          <div className="max-w-3xl mx-auto text-center mb-20">
+            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-slate-900 tracking-tight mb-6 leading-tight">
               Schedule Your Personal Demo
             </h2>
-            <p className="text-lg text-slate-500 leading-relaxed">
+            <p className="text-xl text-slate-600 leading-relaxed font-medium">
               Book a 15-minute demo with our team to see MenuOS in action.
             </p>
           </div>
