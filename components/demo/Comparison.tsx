@@ -1,4 +1,7 @@
+"use client";
+
 import { X, Check } from "lucide-react";
+import ScrollAnimate from "../ScrollAnimate";
 
 export default function Comparison() {
   const manualErrors = [
@@ -18,18 +21,21 @@ export default function Comparison() {
   return (
     <section className="py-24 bg-white">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="max-w-3xl mx-auto text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-semibold text-slate-900 tracking-tight mb-6">
-            Stop Guessing, Start Automating
-          </h2>
-          <p className="text-lg text-slate-500 leading-relaxed">
-            See the transformation in restaurant operations.
-          </p>
-        </div>
+        <ScrollAnimate animationType="fade-up" delay={0}>
+          <div className="max-w-3xl mx-auto text-center mb-16">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-semibold text-slate-900 tracking-tight mb-6">
+              Stop Guessing, Start Automating
+            </h2>
+            <p className="text-lg text-slate-500 leading-relaxed">
+              See the transformation in restaurant operations.
+            </p>
+          </div>
+        </ScrollAnimate>
 
         <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
           {/* Manual Errors */}
-          <div className="p-8 rounded-3xl bg-red-50/50 border-2 border-red-100">
+          <ScrollAnimate animationType="fade-up" delay={100}>
+            <div className="p-8 rounded-3xl bg-red-50/50 border-2 border-red-100">
             <h3 className="text-2xl font-semibold text-slate-900 mb-6">Manual Errors</h3>
             <ul className="space-y-4">
               {manualErrors.map((error, index) => (
@@ -41,10 +47,12 @@ export default function Comparison() {
                 </li>
               ))}
             </ul>
-          </div>
+            </div>
+          </ScrollAnimate>
 
           {/* MenuOS Automation */}
-          <div className="p-8 rounded-3xl bg-green-50/50 border-2 border-green-100">
+          <ScrollAnimate animationType="fade-up" delay={200}>
+            <div className="p-8 rounded-3xl bg-green-50/50 border-2 border-green-100">
             <h3 className="text-2xl font-semibold text-slate-900 mb-6">MenuOS Automation</h3>
             <ul className="space-y-4">
               {menuosBenefits.map((benefit, index) => (
@@ -56,10 +64,12 @@ export default function Comparison() {
                 </li>
               ))}
             </ul>
-          </div>
+            </div>
+          </ScrollAnimate>
         </div>
       </div>
     </section>
   );
 }
+
 

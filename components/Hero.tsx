@@ -1,9 +1,24 @@
 "use client";
 
-import { Bell, Store, ClipboardList, Users, BarChart3, Settings, Search, Printer, MoreVertical, CreditCard, TrendingUp } from "lucide-react";
+import { useState } from "react";
+import { Bell, Store, ClipboardList, Users, BarChart3, Settings, Search, Printer, MoreVertical, CreditCard, TrendingUp, Loader2 } from "lucide-react";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
+import ScrollAnimate from "./ScrollAnimate";
 
 export default function Hero() {
+  const router = useRouter();
+  const [isLoading, setIsLoading] = useState(false);
+
+  const handleDemoClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    setIsLoading(true);
+    // Simulate navigation delay for animation
+    setTimeout(() => {
+      router.push("/demo");
+    }, 300);
+  };
+
   return (
     <header className="relative pt-32 pb-24 lg:pt-40 overflow-hidden">
       {/* Background Gradients */}
@@ -14,27 +29,46 @@ export default function Hero() {
       </div>
 
       <div className="text-center max-w-7xl mx-auto px-6 relative z-10">
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-orange-50 border border-orange-100 text-orange-700 text-xs font-medium mb-8">
-          <span className="flex h-2 w-2 rounded-full bg-orange-500 animate-pulse"></span>
-          v2.0 is now available
-        </div>
+        <ScrollAnimate animationType="fade-up" delay={0}>
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-orange-50 border border-orange-100 text-orange-700 text-xs font-medium mb-8">
+            <span className="flex h-2 w-2 rounded-full bg-orange-500 animate-pulse"></span>
+            v2.0 is now available
+          </div>
+        </ScrollAnimate>
         
-        <h1 className="bg-clip-text text-transparent bg-gradient-to-b from-slate-900 to-slate-600 text-4xl sm:text-6xl lg:text-7xl font-semibold tracking-tight leading-[1.1] max-w-4xl mx-auto mb-6">
-          The Operating System <br className="hidden sm:block" /> for Modern Restaurants
-        </h1>
+        <ScrollAnimate animationType="fade-up" delay={100}>
+          <h1 className="bg-clip-text text-transparent bg-gradient-to-b from-slate-900 to-slate-600 text-4xl sm:text-6xl lg:text-7xl font-semibold tracking-tight leading-[1.1] max-w-4xl mx-auto mb-6">
+            The Operating System <br className="hidden sm:block" /> for Modern Restaurants
+          </h1>
+        </ScrollAnimate>
         
-        <p className="leading-relaxed text-lg sm:text-xl text-slate-500 max-w-2xl mx-auto mb-10">
-          MenuOS simplifies order management, increases revenue, and delivers a seamless dining experience with our all-in-one platform.
-        </p>
+        <ScrollAnimate animationType="fade-up" delay={200}>
+          <p className="leading-relaxed text-lg sm:text-xl text-slate-500 max-w-2xl mx-auto mb-10">
+            MenuOS simplifies order management, increases revenue, and delivers a seamless dining experience with our all-in-one platform.
+          </p>
+        </ScrollAnimate>
 
-        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-          <button className="flex items-center justify-center gap-2 bg-orange-600 text-white text-base font-medium px-8 py-3.5 rounded-full hover:bg-orange-700 transition-all shadow-xl shadow-orange-600/20 hover:shadow-orange-600/30 hover:-translate-y-0.5">
-            Start Free Trial
-          </button>
-          <a href="/demo" className="flex items-center justify-center gap-2 bg-white text-slate-700 border border-slate-200 text-base font-medium px-8 py-3.5 rounded-full hover:bg-slate-50 hover:border-slate-300 transition-all">
-            View Demo
-          </a>
-        </div>
+        <ScrollAnimate animationType="fade-up" delay={300}>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <button className="flex items-center justify-center gap-2 bg-orange-600 text-white text-base font-medium px-8 py-3.5 rounded-full hover:bg-orange-700 transition-all shadow-xl shadow-orange-600/20 hover:shadow-orange-600/30 hover:-translate-y-0.5 disabled:opacity-70 disabled:cursor-not-allowed">
+              Start Free Trial
+            </button>
+            <a
+              href="/demo"
+              onClick={handleDemoClick}
+              className="flex items-center justify-center gap-2 bg-white text-slate-700 border border-slate-200 text-base font-medium px-8 py-3.5 rounded-full hover:bg-slate-50 hover:border-slate-300 transition-all disabled:opacity-70 disabled:cursor-not-allowed"
+            >
+              {isLoading ? (
+                <>
+                  <Loader2 className="loading-spinner" size={18} />
+                  Loading...
+                </>
+              ) : (
+                "View Demo"
+              )}
+            </a>
+          </div>
+        </ScrollAnimate>
       </div>
 
       {/* Dashboard Composition */}

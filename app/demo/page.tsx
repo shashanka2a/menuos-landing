@@ -1,6 +1,5 @@
-import Navbar from "@/components/Navbar";
+import DemoNavbar from "@/components/DemoNavbar";
 import DemoHero from "@/components/demo/DemoHero";
-import TrustedBy from "@/components/demo/TrustedBy";
 import Comparison from "@/components/demo/Comparison";
 import Integration from "@/components/demo/Integration";
 import Stats from "@/components/demo/Stats";
@@ -15,9 +14,8 @@ export const metadata = {
 export default function DemoPage() {
   return (
     <main>
-      <Navbar />
+      <DemoNavbar />
       <DemoHero />
-      <TrustedBy />
       <Comparison />
       <Integration />
       <Stats />
@@ -26,4 +24,5 @@ export default function DemoPage() {
     </main>
   );
 }
+
 

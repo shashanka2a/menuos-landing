@@ -1,4 +1,7 @@
+"use client";
+
 import { Check } from "lucide-react";
+import ScrollAnimate from "./ScrollAnimate";
 
 export default function Pricing() {
   const plans = [
@@ -38,13 +41,18 @@ export default function Pricing() {
   return (
     <section className="py-24 bg-white">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="max-w-2xl mx-auto text-center mb-16">
-          <h2 className="text-4xl font-semibold tracking-tight text-slate-900 mb-4">Simple, transparent pricing</h2>
-          <p className="text-lg text-slate-500">No hidden fees. Scale up or down as you need.</p>
-        </div>
+        <ScrollAnimate animationType="fade-up" delay={0}>
+          <div className="max-w-2xl mx-auto text-center mb-16">
+            <h2 className="text-4xl font-semibold tracking-tight text-slate-900 mb-4">Simple, transparent pricing</h2>
+            <p className="text-lg text-slate-500">No hidden fees. Scale up or down as you need.</p>
+          </div>
+        </ScrollAnimate>
 
         <div className="grid lg:grid-cols-3 gap-8 max-w-5xl mx-auto items-start">
-          {plans.map((plan, index) => (
+          {plans.map((plan, index) => {
+            const delay = (index % 3) * 100 as 0 | 100 | 200;
+            return (
+            <ScrollAnimate key={index} animationType="scale" delay={delay}>
             <div
               key={index}
               className={`rounded-3xl p-8 ${
@@ -87,10 +95,13 @@ export default function Pricing() {
                 ))}
               </ul>
             </div>
-          ))}
+            </ScrollAnimate>
+          );
+          })}
         </div>
       </div>
     </section>
   );
 }
+
 
