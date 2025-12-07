@@ -41,18 +41,18 @@ export default function Features() {
           </div>
         </ScrollAnimate>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
           {features.map((feature, index) => {
             const Icon = feature.icon;
-            const delay = (index % 4) * 100 as 0 | 100 | 200 | 300;
+            const delay = (index % 2) * 100 as 0 | 100;
             return (
               <ScrollAnimate key={index} animationType="fade-up" delay={delay}>
-                <div className="group p-8 rounded-3xl bg-slate-50 border border-slate-100 hover:border-orange-200 transition-all duration-300 hover:shadow-xl hover:shadow-orange-100 hover:-translate-y-1">
-                  <div className="w-12 h-12 bg-white rounded-xl border border-slate-200 flex items-center justify-center text-orange-600 mb-6 shadow-sm group-hover:scale-110 transition-transform duration-300 group-hover:border-orange-200">
-                    <Icon className="text-2xl" size={24} />
+                <div className="group p-10 rounded-3xl bg-slate-50 border border-slate-100 hover:border-orange-200 transition-all duration-300 hover:shadow-xl hover:shadow-orange-100 hover:-translate-y-1">
+                  <div className="w-16 h-16 bg-white rounded-xl border border-slate-200 flex items-center justify-center text-orange-600 mb-6 shadow-sm group-hover:scale-110 transition-transform duration-300 group-hover:border-orange-200">
+                    <Icon className="text-3xl" size={32} />
                   </div>
-                  <h3 className="text-lg font-semibold text-slate-900 tracking-tight mb-3">{feature.title}</h3>
-                  <p className="text-sm leading-relaxed text-slate-500">{feature.description}</p>
+                  <h3 className="text-xl font-semibold text-slate-900 tracking-tight mb-4">{feature.title}</h3>
+                  <p className="text-base leading-relaxed text-slate-500">{feature.description}</p>
                 </div>
               </ScrollAnimate>
             );
