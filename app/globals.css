@@ -47,6 +47,20 @@ body {
   animation: marquee-vertical 20s linear infinite;
 }
 
+/* Horizontal scrolling animation */
+@keyframes marquee-horizontal {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee-horizontal {
+  animation: marquee-horizontal 30s linear infinite;
+}
+
 /* Dashboard specific scrollbar override for dark mode feel */
 .dark-scroll::-webkit-scrollbar-thumb {
   background: #334155;

@@ -30,11 +30,11 @@ export default function Integration() {
     <section className="py-24 bg-slate-50 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
         <ScrollAnimate animationType="fade-up" delay={0}>
-          <div className="max-w-3xl mx-auto text-center mb-20">
-            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-slate-900 tracking-tight mb-6 leading-tight">
+          <div className="max-w-3xl mx-auto text-center mb-16">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 tracking-tight mb-4 leading-tight">
               How Easy Is MenuOS Integration?
             </h2>
-            <p className="text-xl text-slate-600 leading-relaxed font-medium">
+            <p className="text-lg text-slate-600 leading-relaxed font-medium">
               Get started in four simple steps.
             </p>
           </div>
@@ -43,14 +43,16 @@ export default function Integration() {
         <div className="relative max-w-6xl mx-auto">
           {/* Dotted line connecting steps - hidden on mobile, visible on desktop */}
           <svg
-            className="hidden lg:block absolute top-1/2 left-0 right-0 h-0.5 -translate-y-1/2 z-0"
-            style={{ top: "120px" }}
+            className="hidden lg:block absolute left-0 right-0 h-0.5 z-0"
+            style={{ top: "48px" }}
+            viewBox="0 0 100 2"
+            preserveAspectRatio="none"
           >
             <line
-              x1="5%"
-              y1="0"
-              x2="95%"
-              y2="0"
+              x1="8%"
+              y1="1"
+              x2="92%"
+              y2="1"
               className="dotted-line"
             />
           </svg>
@@ -61,15 +63,15 @@ export default function Integration() {
               return (
                 <ScrollAnimate key={index} animationType="fade-up" delay={delay}>
                   <div className="text-center relative">
-                    <div className="w-24 h-24 mx-auto mb-8 bg-orange-600 rounded-full flex items-center justify-center text-white shadow-lg shadow-orange-600/20 relative z-10">
+                    <div className="w-20 h-20 mx-auto mb-6 bg-orange-600 rounded-full flex items-center justify-center text-white shadow-lg shadow-orange-600/20 relative z-10">
                       <iconify-icon
                         icon={step.icon}
-                        class="text-4xl"
-                        style={{ fontSize: "36px" }}
+                        class="text-3xl"
+                        style={{ fontSize: "28px" }}
                       ></iconify-icon>
                     </div>
-                    <h3 className="text-2xl font-bold text-slate-900 mb-4">{step.title}</h3>
-                    <p className="text-lg text-slate-600 leading-relaxed font-medium">{step.description}</p>
+                    <h3 className="text-xl font-bold text-slate-900 mb-3">{step.title}</h3>
+                    <p className="text-base text-slate-600 leading-relaxed">{step.description}</p>
                   </div>
                 </ScrollAnimate>
               );
