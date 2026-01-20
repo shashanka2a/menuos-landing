@@ -17,13 +17,13 @@ export default function Navbar() {
 
         <div className="flex items-center gap-4">
           <Link
-            href="https://restaurant.menuos.app/"
+            href="https://restaurant.menuos.app/login"
             className="hidden md:block text-sm font-medium text-slate-600 hover:text-orange-600 transition-colors"
           >
             Log in
           </Link>
           <Link
-            href="https://restaurant.menuos.app/"
+            href="https://restaurant.menuos.app/signup"
             className="inline-flex transition-all duration-300 group text-sm font-medium text-white rounded-full py-2 px-5 relative gap-x-2 items-center justify-center overflow-hidden bg-orange-600 hover:bg-orange-700 shadow-lg shadow-orange-600/20"
           >
             <span className="relative z-10 flex items-center gap-2">

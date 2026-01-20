@@ -51,7 +51,7 @@ export default function Hero() {
         <ScrollAnimate animationType="fade-up" delay={300}>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <a
-              href="https://restaurant.menuos.app/"
+              href="https://restaurant.menuos.app/signup"
               className="flex items-center justify-center gap-2 bg-orange-600 text-white text-base font-semibold px-8 py-3.5 rounded-full hover:bg-orange-700 transition-all shadow-xl shadow-orange-600/20 hover:shadow-orange-600/30 hover:-translate-y-0.5 disabled:opacity-70 disabled:cursor-not-allowed"
             >
               Get Started
